@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OST</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+</head>
+<body>
+    <div class="container bg-dark center">
+
+        <table class="table">
+            {% for skill in skills %}
+                <tr>
+                    <td class="col-10p">
+                        <form action="/sub" method="post">
+                            <button class="btn-orange btn-xs" name="sub" value="{{ skill.name }}">-</button>
+                        </form>
+                    </td>
+                    <td class="center">{{ skill.name }}</td>
+                    <td class="center col-10p">{{ skill.count }}</td>
+                    <td class="col-10p">
+                        <form action="/add" method="post">
+                            <button class="btn-orange btn-xs" name="add" value="{{ skill.name }}">+</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+        <table class="table">
+
+            {% for attribute in attributes %}
+                <tr class="font-h3 font-glow">
+                    <td>{{ attribute.name }}</td>
+                    <td>{{ attribute.count }}</td>
+                </tr>
+            {% endfor %}
+                
+        </table>
+
+                <div class="container">
+                    <form action="/levelup" method="post">
+                        <button name="levelup" value="Level Up" class="btn-neon btn-l">Level Up</button>
+                    </form>
+                </div>
+
+        
+        
+    </div>
+</body>
+</html>
