@@ -1,4 +1,4 @@
-oblivion_skills = {
+o_skills = {
     "Blade": "STR",
     "Blunt": "STR",
     "Hand To Hand": "STR",
@@ -22,7 +22,7 @@ oblivion_skills = {
     "Restoration": "WIL",
 }
 
-oblivion_attributes = {
+o_attributes = {
     "STR": 0,
     "END": 0,
     "SPD": 0,

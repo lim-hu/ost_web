@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OST</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+</head>
+<body>
+    <div class="container bg-dark center">
+
+        <table class="table">
+            {% for skill in o_skills %}
+                <tr>
+                    <td class="col-10p">
+                        <button id="{{ skill }}" class="btn-orange btn-xs" name="sub" onclick="skillSub(id)">-</button>
+                    </td>
+                    <td class="center">{{ skill }}</td>
+                    <td id="{{ skill }}Counter" class="center col-15p">0</td>
+                    <td class="col-10p">
+                        <button id="{{ skill }}" class="btn-orange btn-xs" name="add" onclick="skillAdd(id)">+</button>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+        <table class="table">
+
+            {% for attribute in o_attributes %}
+                <tr class="font-h3 font-glow">
+                    <td>{{ attribute }}</td>
+                    <td id="{{ attribute }}Counter">+1</td>
+                </tr>
+            {% endfor %}
+                
+        </table>
+
+                <div class="container">
+                        <button name="levelup" value="Level Up" class="btn-neon btn-l" onclick="levelup()">Level Up</button>
+                </div>
+
+    </div>
+    <script src="{{ url_for('static', filename='app.js')}}"></script>
+
+</body>
+</html>
